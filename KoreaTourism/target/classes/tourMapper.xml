@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.tour">
+
+	<select id="select_list" resultType="com.saem.domain.TourVO">
+		SELECT * FROM the_sight_tourdata limit #{pageNum}, 10
+	</select>
+	
+	<select id="selectMain" resultType="com.saem.domain.TourVO">
+		SELECT * FROM the_sight_tourdata ORDER BY div_area_count DESC LIMIT 9
+	</select>
+	
+	<select id="selectSeg" resultType="com.saem.domain.TourVO">
+		SELECT tour_name, div_seg_area FROM the_sight_tourdata WHERE div_seg_name like#{seg_name}
+	</select>
+	
+	<select id="selectOneSeg" resultType="com.saem.domain.TourVO">
+		SELECT ca_peo, ca_car, tour_info, tour_com_tel, tour_name, div_seg_area, location_x, location_y, st_date, tour_com_name, addr_street, addr_location FROM the_sight_tourdata WHERE tour_name like#{tour_name}
+	</select>
+	
+	<select id="selectAll" resultType="com.saem.domain.TourVO">
+		SELECT * FROM the_sight_tourdata
+	</select>
+	
+	<insert id="new_tour">
+		INSERT INTO the_sight_tourdata VALUES(#{tour_name}, #{tour_div}, #{addr_street}, #{addr_location}, #{location_x}, #{location_y}, #{location_area}, #{pb_store_info}, #{pb_acco_info}, #{pb_play_info}, #{pb_cul_info}, #{pb_peo_info}, #{pb_sp_info}, #{st_date}, #{ca_peo}, #{ca_car}, #{tour_info}, #{tour_com_tel}, #{tour_com_name}, #{rec_update}, #{div_seg_area}, #{div_seg_name}, 0);
+	</insert>
+	
+	<update id="update_count">
+		UPDATE the_sight_tourdata SET div_area_count = #{div_area_count} WHERE tour_name = #{tour_name}
+	</update>
+	
+</mapper>

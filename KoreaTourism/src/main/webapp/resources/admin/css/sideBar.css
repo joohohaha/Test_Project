@@ -1,0 +1,85 @@
+#contents {
+	background-color: #ffcdcd;
+    margin-left: 300px;
+}
+
+#contents h2{
+	text-align: center;
+}
+#logo-container {
+    height: 57px;
+    margin-bottom: 32px;
+}
+
+#nav-mobile{
+	overflow: hidden;
+}
+
+#nav-mobile li.search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 160px;
+    margin-top: 1px;
+    padding: 1px 0 0 0;
+    z-index: 2;
+}
+#nav-mobile li.search .search-wrapper {
+    color: #777;
+    margin-top: -1px;
+    border-top: 1px solid rgba(0,0,0,0.14);
+    -webkit-transition: margin .25s ease;
+    transition: margin .25s ease;
+}
+#nav-mobile li.search .search-wrapper i.material-icons {
+    position: absolute;
+    top: 21px;
+    right: 10px;
+    cursor: pointer;
+}
+#nav-mobile li.search .search-wrapper input#search {
+    color: #777;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    height: 62px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 45px 0 30px;
+    border: 0;
+}
+#nav-mobile li.search .search-results {
+    margin: 0;
+    border-top: 1px solid rgba(0,0,0,0.14);
+    background-color: #fff;
+}
+ul.sidenav.sidenav-fixed li.logo {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 136px;
+}
+
+#front-page-logo {
+    display: inline-block;
+    height: 100%;
+    pointer-events: none;
+}
+
+#nav-mobile li.version {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    font-family: "Inconsolata";
+    text-align: center;
+}
+
+#nav-mobile li.version .dropdown-trigger {
+    font-family: "Inconsolata";
+    margin: 0 auto;
+    display: inline-block;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.reply">
+	<select id="select_list" resultType="com.saem.domain.ReplyVO">
+		SELECT * FROM the_sight_reply WHERE r_used != 0 AND tour_name = #{tour_name}
+	</select>
+	
+	<select id="select_count" resultType="com.saem.domain.TourVO">
+		SELECT count(r_num) as div_area_count FROM the_sight_reply WHERE r_used != 0 AND tour_name = #{tour_name}
+	</select>
+	
+	<insert id="insert_reply">
+      	INSERT INTO the_sight_reply(m_userid, tour_name, r_content) VALUES(#{m_userid}, #{tour_name}, #{r_content})
+   	</insert>
+	
+	<update id="delete_reply">
+		UPDATE the_sight_reply SET r_used = 0  WHERE r_num = #{r_num} and tour_name = #{tour_name}
+	</update>
+	
+</mapper>

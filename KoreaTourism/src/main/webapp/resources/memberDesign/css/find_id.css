@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,a,address,em,img,strong,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,video{margin:0;padding:0;font-size:100%;border:0;vertical-align:baseline}
+address,em{font-style:normal}
+select{height:20px;font-size:12px}
+table{border-collapse:collapse}
+input{padding-right:1px}
+textarea{font-family:'돋움',dotum,AppleGothic,sans-serif;font-size:12px;color:#333;resize:none}
+.blind{visibility:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;overflow:hidden}
+ol,ul{list-style:none}
+a,a:link{text-decoration:none}
+a:hover{text-decoration:underline}
+.clear_float:after{display:block;clear:both;content:".";width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden}
+.clear_float{zoom:1}
+html{overflow-y:scroll;}
+body{line-height:1;font-family:'돋움',dotum,AppleGothic,sans-serif;color:#000;font-size:12px}
+
+/* skip navigation */
+.skip_navi{position:absolute;top:0;left:0;width:0;height:0}
+.skip_navi a{position:absolute;top:-999px;left:0;white-space:nowrap}
+.skip_navi a:focus{top:0;font-size:11px;color:#fff;background:#000;padding:5px}
+
+/* layout */
+#find_userid #wrap{background-color:white;width:550px;margin:0 auto;text-align:left;}
+
+#find_userid #header{position:relative;height:50px;min-width:inherit;z-index:300;background-color:#1B52E8}
+#find_userid #header h1{width:inherit;height:48px;padding-top:52px;margin:0 auto}
+#find_userid #header h1 a{float:left}
+#find_userid #header h1 span{display:block;width:78px;height:24px;overflow:hidden;text-indent:-999px;background:url("../images/spr_header_member_161019.png") no-repeat}
+#find_userid #header h1 > span{float:left;width:82px;background-position:-86px 0;margin-left:8px}
+#find_userid #header h1 a span{cursor:pointer}
+#find_userid #header .header_menu{height:39px;border-bottom:1px solid #d7dddf;background:#eff3f6}
+#find_userid #header .header_menu > ul{width:960px;height:40px;margin:0 auto}
+#find_userid #header .header_menu > ul > li{position:relative;float:left;position:relative;width:159px;height:39px;border-right:1px solid #e1e0e2;border-top:1px solid #e6e5e6}
+#find_userid #header .header_menu > ul > li a{display:block;background:#fbfbfd;height:38px;line-height:38px;color:#262626;font-weight:bold;letter-spacing:-1px;text-align:center;}
+#find_userid #header .header_menu > ul > li:first-child{width:158px;border-left:1px solid #e1e0e2}
+#find_userid #header .header_menu > ul > li.on{border-color:#1169ee;background:#1169ee}
+#find_userid #header .header_menu > ul > li.on a{position:relative;background:#1169ee;color:#fff;}
+
+#find_userid #container{width:inherit;margin:0 auto}
+#find_userid #container .title{position:relative;padding-top:10px;height:38px;}
+#find_userid #container .title h2{font-size:16px;height:20px;line-height:20px;letter-spacing:-1px;}
+#find_userid #container .title h2 span{position:relative;top:-1px;display:inline-block;font-size:12px;color:#828896;}
+#find_userid #container .title h2 span em{font-weight:normal;padding:0 5px;}
+#find_userid #container .contents{width:900px;margin:0 auto;text-align:left}
+#find_userid #container .contents .guide{background:#f5f5f7;font-size:11px;line-height:15px;color:#545765;text-align:center;letter-spacing:-1px;border:1px solid #ecedf2;border-bottom:1px solid #cdced8;padding:17px 0 16px;margin-bottom:40px;}
+#find_userid #container .contents .guide_change{text-align:left;padding-left:20px;}
+
+#find_userid #footer{width:960px;border-top:2px solid #666;text-align:center;padding:20px 0;margin:0 auto}
+#find_userid #footer li{display:inline;padding:0 5px}
+#find_userid #footer li a{font-size:11px;color:#727272;letter-spacing:-1px;}
+#find_userid #footer li.adr em{font-style:normal;letter-spacing:0;padding-right:1px;}
+#find_userid #footer li.adr a{font-family:Tahoma,sans-serif;letter-spacing:0}
+
+/* 아이디찾기 비밀번 재발급 float box */
+.box_outer{padding:50px 0 30px;}
+.box_outer .box{position:relative;border:1px solid #dddee0;width:438px;height:427px;box-shadow: 2px 3px 3px #ebebeb;}
+.box_outer .box .inner_center{text-align:center}
+.box_outer .box_left{float:left;}
+.box_outer .box_right{float:right;}
+.box_outer .box .btn{position:absolute;bottom:60px;width:438px;text-align:center;}
+.box_outer .box .btn_pass{position:absolute;bottom:30px;width:438px;text-align:center;}
+.box_outer .box h3{position:relative;font-size:18px;height:22px;line-height:22px;color:#262626;text-align:center;letter-spacing:-1px;padding:60px 0 20px 0;z-index:100}
+.box_outer .box h3 strong{color:#1169ee;}
+
+.box_outer .box dl{padding:20px 0 0 55px;}
+.box_outer .box dt{height:20px;line-height:15px;color:#262626;font-weight:bold;}
+.box_outer .box dd{color:#999999;padding-bottom:11px;}
+.box_outer .box p.help{font-size:11px;line-height:14px;color:#545765;padding-top:4px;}
+.box_outer .box p.email{font-family:tahoma;font-size:16px;width:400px;line-height:20px;font-weight:bold;color:#262626;text-align:center;padding-top:70px;margin:0 auto;word-break:break-all;white-space:pre-wrap;}
+.box_outer .box p.email_txt{font-weight:bold;color:#1169ee;line-height:16px;letter-spacing:-1px;text-align:center;padding-top:5px;}
+.box_outer .box p.phone{font-family:Tahoma,sans-serif;font-size:16px;line-height:20px;font-weight:bold;color:#262626;padding-bottom:10px;}
+.box_outer .box p.tit{height:30px;line-height:30px;font-weight:bold;letter-spacing:-1px;}
+.box_outer .box p.help_blue{color:#1169ee;letter-spacing:-1px;padding-top:15px;}
+.box_outer .box p.failure{background:url('../images/bg_failure.gif') no-repeat 50% 0;font-family:Tahoma,'돋움',dotum,AppleGothic,sans-serif;font-size:14px;line-height:18px;font-weight:bold;color:#262626;text-align:center;padding-top:85px;margin-top:30px}
+.box_outer .box p.email_send{background:url('../images/bg_email_send.gif') no-repeat 50% 0;font-family:Tahoma,sans-serif;font-size:16px;width:400px;line-height:20px;font-weight:bold;color:#262626;text-align:center;padding-top:95px;margin:15px auto 0 auto;word-break:break-all;white-space:pre-wrap;}
+
+/* 구분 배경 이미지 */
+.box_outer .box .id_email{position:absolute;top:-1px;right:-1px;background:url('images/bg_kind.gif') no-repeat 0 0;width:104px;height:104px}
+.box_outer .box .id_phone{position:absolute;top:-1px;right:-1px;background:url('images/bg_kind.gif') no-repeat -114px 0;width:104px;height:104px}
+
+/* type_01 */
+#find_userid #container input.type_01{background:#eff3f6;font-size:12px;font-weight:bold;color:#262626;height:25px;line-height:25px;border:1px solid #898f94;border-right:1px solid #b3bbc1;border-bottom:1px solid #b3bbc1;padding:0  9px;margin:0;vertical-align:middle;}
+#find_userid #container input.type_01:focus{background:#fff;}
+#find_userid #container input.txt_center{text-align:center;}
+#find_userid #container select.type_01{height:27px;border:1px solid #abadb3;margin:0;padding:0;font-family:Tahoma;vertical-align:middle;padding:4px 4px 4px 0;}
+
+/* type_02 */
+#find_userid #container input.type_02{background:#eff3f6;font-size:14px;font-weight:bold;color:#262626;height:30px;line-height:30px;border:1px solid #898f94;border-right:1px solid #b3bbc1;border-bottom:1px solid #b3bbc1;padding:0  9px;margin:0;vertical-align:middle;}
+#find_userid #container input.type_02:focus{background:#fff;}
+#find_userid #container select.type_02{height:32px;border:1px solid #abadb3;margin:0;padding:0;font-family:Tahoma;vertical-align:middle;padding:6px;}
+
+/* 아이디 찾기 */
+#find_userid #footer {
+	padding: 0px;
+}
+#find_userid .modal-content{
+	background-color: rgba(0,0,0,0);
+}
+#find_userid #container .contents{
+	width: auto;
+}
+#find_userid .box_outer {
+    padding: 0;
+}
+#find_userid .box_outer .box {
+    position: relative;
+    /* border: 1px solid #dddee0; */
+    width: 438px;
+    height: 427px;
+    margin: 0 auto;
+    /* box-shadow: 2px 3px 3px #ebebeb; */
+}
+#find_userid #container .contents .guide{
+	margin-bottom:0;
+}
+#find_userid #container:before {
+	background: #ffff;
+}
+#find_userid .box_outer .box .btn {
+    bottom: 25px;
+}
+
+#find_userid .portfolio-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 30px;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-color: #212529;
+}

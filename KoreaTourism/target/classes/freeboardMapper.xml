@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.freeboard">
+	<select id="select_list" resultType="com.saem.domain.FreeBoardVO">
+		SELECT * FROM the_sight_freeboard ORDER BY f_id DESC limit #{pageNum}, 7;
+	</select>
+	
+	<select id="select" resultType="com.saem.domain.FreeBoardVO">
+		SELECT * FROM the_sight_freeboard WHERE f_id = #{f_id} <!-- mybatis 문법 -->
+	</select>
+	
+	<select id="select_hotpost" resultType="com.saem.domain.FreeBoardVO">
+		SELECT * FROM the_sight_freeboard ORDER BY f_hit DESC limit 5
+	</select>
+	
+	<select id="select_count" resultType="com.saem.domain.FreeBoardVO">
+		SELECT count(*) as f_count FROM the_sight_freeboard
+	</select>
+	
+	<delete id="delete">
+		DELETE FROM the_sight_freeboard WHERE f_id = #{f_id}
+	</delete>
+	
+	<update id="update">
+		UPDATE the_sight_freeboard SET f_title = #{f_title}, f_content = #{f_content} WHERE f_id = #{f_id}
+	</update>
+	
+	<insert id="insert">
+      	INSERT INTO the_sight_freeboard(m_userid, f_title, f_content) VALUES(#{m_userid}, #{f_title}, #{f_content})
+   	</insert>
+	
+	 <update id="uphit">
+	 	UPDATE the_sight_freeboard SET f_hit = f_hit + 1 WHERE f_id = #{f_id}
+     </update>
+	
+</mapper>

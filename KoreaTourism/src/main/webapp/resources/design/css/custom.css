@@ -1,0 +1,36 @@
+#mainNav .navbar-nav .nav-item .nav-link {
+   -webkit-appearance: initial;
+   padding: 0px;
+   margin: 0px;
+}
+
+.container.top-section {
+    padding: 30px 10px;
+}
+.top-section{
+	
+}
+.top-section #map{
+	width:48%;
+	height:446px;
+}
+.top-section #carouselExampleIndicators2{
+	width:58%;
+	margin-left:2%;
+}
+.top-section #map,
+.top-section #carouselExampleIndicators2{
+	float:left;
+}
+
+/* 댓글 */
+#reply .media.mb-4 {
+    border-bottom: 1px solid #ddd;
+}
+#reply .media.mb-4 .mb-4 {
+    margin-bottom: 5px !important;
+    border: none;
+}
+.mt-0, .media-body {
+    text-align: left;
+}

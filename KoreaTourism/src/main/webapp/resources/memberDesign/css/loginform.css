@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* common css reset */
+a,abbr,acronym,address,applet,article,aside,audio,b,bdi,bdo,big,blockquote,body,button,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,header,hgroup,h1,h2,h3,h4,h5,h6,html,i,iframe,img,input,ins,kbd,label,legend,li,map,mark,menu,nav,object,ol,p,pre,q,rp,rt,ruby,s,samp,section,select,small,span,strike,strong,summary,sub,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;font-size:100%;border:0;vertical-align:baseline}
+#loginModal input, #loginModal select, #loginModal textarea{color:#000;padding:0;margin:0}
+#loginModal .blind{position:absolute !important;font-size:0 !important;visibility:hidden !important}
+#loginModal legend, #loginModal caption, #loginModal hr{display:none}
+#loginModal ol, #loginModal ul{list-style:none}
+#loginModal a{text-decoration:none}
+#loginModal img{vertical-align:top}
+/* common css reset */
+#loginModal body{line-height:1.5;font-family:"맑은 고딕","Malgun Gothic",'돋움',dotum,"Apple SD Gothic Neo",sans-serif;color:#000;font-size:12px;background:#fff}
+#loginModal input{font-family:"맑은 고딕","Malgun Gothic",'돋움',dotum,"Apple SD Gothic Neo",sans-serif}
+#loginModal input::-ms-clear{display:none}
+#loginModal #wrap{width: 550px;margin: 0 auto;}
+#loginModal #header{position:relative;height:72px;overflow:hidden;text-align:center;background:#1b52ed;background:linear-gradient(to right,#3faeeb,#3967d0 46%,#3846d0);background:-webkit-linear-gradient(left,#3faeeb,#3967d0 46%,#3846d0);padding-top:28px}
+#loginModal #container{position:relative}
+#loginModal #container:before{position:absolute;top:0;left:0;right:0;height:100%;background:#f4f6f8;content:''}
+#loginModal #container > div{position:relative;width:550px;border:1px solid #e0e0e0;background:#fff;margin:0 auto;box-sizing:border-box;z-index:1}
+#loginModal #container h2{color:#000;font-size:20px;line-height:29px;letter-spacing:-1px;border-bottom:1px solid #f1f1f1;padding:50px 0 14px;margin:0 80px}
+#loginModal #container .login_box{position:relative;padding-bottom:38px;margin:0 80px}
+#loginModal #container .login_box dl{padding-top:8px}
+#loginModal #container .login_box dd{clear:both;padding-top:15px}
+#loginModal #container .login_box dd:after{clear:both;display:table;content:''}
+#loginModal #container .login_box .text_box{position:relative;display:block;height:45px;overflow:hidden;border:1px solid #f1f1f1;border-radius:24px;background:#f8f8f8;box-sizing:border-box}
+#loginModal #container .login_box .text_box:after{clear:both;display:table;content:''}
+#loginModal #container .login_box .text_box label{position:absolute;top:0;left:0;right:0;color:#888;font-size:16px;line-height:20px;letter-spacing:-1px;padding:12px 20px 11px;box-sizing:border-box;cursor:text;z-index:1}
+#loginModal #container .login_box .text_box input{position:relative;float:left;width:100%;height:43px;overflow:hidden;color:#000;font-size:16px;line-height:20px;letter-spacing:-1px;border:0;background:rgba(255,255,255,0);padding:12px 46px 11px 20px;box-sizing:border-box;outline:0;-webkit-appearance:none}
+#loginModal #container .login_box .text_box .btn_clear{position:absolute;top:11px;right:14px;width:22px;height:22px;overflow:hidden;text-indent:-9999px;background:url("../images/spr_login_20180607.png") no-repeat;z-index:1}
+#loginModal #container .login_box .text_box.on{border-color:#e0e0e0;background:#fff}
+#loginModal #container .login_box .text_box.on label{display:none}
+#loginModal #container .login_box .text_box.warning{border-color:#b92d00 !important}
+#loginModal #container .login_box .text_alert{padding-top:7px}
+#loginModal #container .login_box .text_alert p{position:relative;color:#b92d00;font-size:12px;line-height:18px;letter-spacing:-1px;word-break:break-all;padding-left:21px}
+#loginModal #container .login_box .text_alert p:before{position:absolute;top:5px;left:11px;width:5px;height:5px;border:solid #b92d00;border-width:0 0 1px 1px;content:''}
+#loginModal #container .login_box .btn_login{clear:both;text-align:center;margin-top:20px}
+#loginModal #container .login_box .btn_login button{width:100%;height:45px;overflow:hidden;color:#fff;font-size:20px;letter-spacing:-1px;border:1px solid #1b52ed;border-radius:24px;background:#1b52ed;vertical-align:top;cursor:pointer}
+#loginModal #container .login_box .check_keep_login{position:absolute;bottom:0;left:0;white-space:nowrap}
+#loginModal #container .login_box .check_keep_login:after{clear:both;display:table;content:''}
+#loginModal #container .login_box .check_keep_login input{float:left;margin:6px 5px 0 1px}
+#loginModal #container .login_box .check_keep_login label{position:relative;display:inline-block;height:24px;color:#292929;font-size:15px;line-height:26px;letter-spacing:-1px;padding-right:5px;vertical-align:top}
+#loginModal #container .login_box .check_ip_security{position:absolute;top:-37px;right:0;white-space:nowrap}
+#loginModal #container .login_box .check_ip_security label{position:relative;display:inline-block;height:20px;color:#292929;font-size:13px;letter-spacing:-1px;line-height:20px;vertical-align:top;z-index:1;cursor:pointer}
+#loginModal #container .login_box .check_ip_security label strong{font-family:Tahoma,sans-serif}
+#loginModal #container .login_box .check_ip_security label:hover{text-decoration:underline}
+#loginModal #container .login_box .check_ip_security input{position:absolute;top:0;left:0;width:100%;height:20px;opacity:0;filter:alpha(opacity=0);-webkit-appearance:none;cursor:pointer}
+#loginModal #container .login_box .check_ip_security .checked strong{color:#1b52ed}
+#loginModal #container .login_menu{padding:24px 0 32px;margin:0 78px}
+#loginModal #container .login_menu ul{height:24px;font-size:0;white-space:nowrap}
+#loginModal #container .login_menu li{position:relative;display:inline-block;line-height:24px;text-align:center;vertical-align:top}
+#loginModal #container .login_menu li a{color:#292929;font-size:16px;letter-spacing:-1px}
+#loginModal #container .login_menu li a:hover{text-decoration:underline}
+#loginModal #container .login_menu li:first-child{width:32%}
+#loginModal #container .login_menu li:first-child + li{width:40%}
+#loginModal #container .login_menu li:first-child + li:before{position:absolute;top:5px;left:3px;width:1px;height:15px;background:#ededed;content:''}
+#loginModal #container .login_menu li:first-child + li:after{position:absolute;top:5px;right:1px;width:1px;height:15px;background:#ededed;content:''}
+#loginModal #container .login_menu li:first-child + li + li{width:28%}
+#loginModal #container .social_login{padding:0 80px 62px}
+#loginModal #container .social_login li{margin-top:10px}
+#loginModal #container .social_login li:first-child{margin:0}
+#loginModal #container .social_login li a{position:relative;display:block;height:50px;overflow:hidden;color:#888;font-size:16px;font-weight:700;line-height:50px;letter-spacing:-1px;border:1px solid #ededed;border-radius:26px;background:#fff;padding-left:23px;box-sizing:border-box}
+#loginModal #container .social_login li a:before{display:inline-block;width:13px;height:13px;overflow:hidden;border:1px solid #888;border-radius:8px;background:#888;margin-right:9px;vertical-align:-1px;content:''}
+#loginModal #container .social_login li a:after{position:absolute;top:17px;right:23px;width:8px;height:14px;background:url("../images/spr_login_20180607.png") no-repeat 0 -27px;content:''}
+#loginModal #container .social_login li a.sc_facebook{color:#365097}
+#loginModal #container .social_login li a.sc_facebook:before{border-color:#365097;background:#365097}
+#loginModal #container .social_login li a.sc_twitter{color:#1ca0f3}
+#loginModal #container .social_login li a.sc_twitter:before{border-color:#1ca0f3;background:#1ca0f3}
+#loginModal #container .social_login li a.sc_kakao{color:#f5c500}
+#loginModal #container .social_login li a.sc_kakao:before{border-color:#f5c500;background:#f5c500}
+#loginModal #container .social_login li a.sc_facebook:hover{border-color:#365097}
+#loginModal #container .social_login li a.sc_facebook:hover:after{background-position:-13px -27px}
+#loginModal #container .social_login li a.sc_twitter:hover{border-color:#1ca0f3}
+#loginModal #container .social_login li a.sc_twitter:hover:after{background-position:0 -46px}
+#loginModal #container .social_login li a.sc_kakao:hover{border-color:#f5c500}
+#loginModal #container .social_login li a.sc_kakao:hover:after{background-position:-13px -46px}
+#loginModal #container .captcha_box{margin:25px 80px 5px}
+#loginModal #container .captcha_box .help{color:#999;font-size:12px;line-height:20px;letter-spacing:-1px;padding-top:10px}
+#loginModal #container .captcha_wrap {text-align: center;}
+#loginModal #container .g-recaptcha {display: inline-block;}
+
+#loginModal #footer{clear:both;text-align:center;padding:76px 0 50px}
+#loginModal #footer .links{font-size:0;white-space:nowrap}
+#loginModal #footer .links li{position:relative;display:inline-block;color:#999;line-height:18px;padding-left:14px;margin-left:14px;vertical-align:top}
+#loginModal #footer .links li:before{position:absolute;top:4px;left:0;width:1px;height:12px;background:#dcdcdc;content:''}
+#loginModal #footer .links li:first-child{padding:0;margin:0}
+#loginModal #footer .links li:first-child:before{display:none}
+#loginModal #footer .links li a{color:#999;font-size:12px;letter-spacing:-0.5px}
+#loginModal #footer .links li a:hover{text-decoration:underline}
+
+#loginModal #container .login_email_page h3{color:#000;font-size:16px;font-weight:normal;line-height:24px;letter-spacing:-1px;margin:0 80px}
+#loginModal #container .login_email_page .txt_box{margin:32px 80px 22px;padding:30px 25px;letter-spacing:-1px;line-height:20px;font-size:15px;box-sizing:border-box;background-color:#f8f8f8}
+#loginModal #container .login_email_page .txt_box .highlight{color:#b92d00}
+#loginModal #container .login_email_page .txt_box a.link{text-decoration:underline;color:#1b52ed}
+#loginModal #container .login_email_page .form_box{position:relative;padding-bottom:84px;margin:0 80px}
+#loginModal #container .login_email_page .form_box dl{padding-top:8px}
+#loginModal #container .login_email_page .form_box dd{clear:both;}
+#loginModal #container .login_email_page .form_box dd:after{clear:both;display:table;content:''}
+#loginModal #container .login_email_page .form_box .text_box{position:relative;display:block;height:40px;overflow:hidden;border:1px solid #f1f1f1;border-radius:24px;background:#f8f8f8;box-sizing:border-box}
+#loginModal #container .login_email_page .form_box .text_box:after{clear:both;display:table;content:''}
+#loginModal #container .login_email_page .form_box .text_box label{position:absolute;top:0;left:0;right:0;color:#888;font-size:16px;line-height:20px;letter-spacing:-1px;padding:10px 20px;box-sizing:border-box;cursor:text;z-index:1}
+#loginModal #container .login_email_page .form_box .text_box input{position:relative;float:left;width:100%;height:38px;overflow:hidden;color:#000;font-size:16px;line-height:20px;letter-spacing:-1px;border:0;background:rgba(255,255,255,0);padding:9px 46px 9px 20px;box-sizing:border-box;outline:0;-webkit-appearance:none}
+#loginModal #container .login_email_page .form_box .text_box.warning{border-color:#b92d00 !important}
+#loginModal #container .login_email_page .form_box .text_box .ico i{display:none;text-indent:-9999px;position:absolute;top:11px;right:14px;width:18px;background:url('../images/spr_input.gif') no-repeat 0 -20px;z-index:1}
+#loginModal #container .login_email_page .form_box .text_box .ico i.success{height:14px;background-position:0 -20px}
+#loginModal #container .login_email_page .form_box .text_box .ico i.warning{height:15px;background-position:0 0px}
+#loginModal #container .login_email_page .form_box .text_box.success .ico i.success{display:block}
+#loginModal #container .login_email_page .form_box .text_box.warning .ico i.warning{display:block}
+#loginModal #container .login_email_page .form_box .text_box.on{border-color:#e0e0e0;background:#fff}
+#loginModal #container .login_email_page .form_box .text_box.on label{display:none}
+#loginModal #container .login_email_page .form_box .text_alert{padding-top:7px}
+#loginModal #container .login_email_page .form_box .text_alert p{position:relative;color:#b92d00;font-size:12px;line-height:18px;letter-spacing:-1px;word-break:break-all;padding-left:21px}
+#loginModal #container .login_email_page .form_box .text_alert p:before{position:absolute;top:5px;left:11px;width:5px;height:5px;border:solid #b92d00;border-width:0 0 1px 1px;content:''}
+#loginModal #container .login_email_page .form_box .btns{clear:both;text-align:center;margin-top:44px}
+#loginModal #container .login_email_page .form_box .btns button{width:100%;height:45px;overflow:hidden;color:#fff;font-size:20px;letter-spacing:-1px;border:1px solid #1b52ed;border-radius:24px;background:#1b52ed;vertical-align:top;cursor:pointer}
+#loginModal #container .login_email_page .form_box .btns button.variable{width:auto;padding:0 55px}

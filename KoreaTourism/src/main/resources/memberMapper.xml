@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.member">
+	<select id="select_list" resultType="com.saem.domain.MemberVO">
+		SELECT * FROM the_sight_member WHERE m_used = 1 ORDER BY m_userid DESC limit #{pageNum}, 7;
+	</select>
+	
+	<select id="select_delete" resultType="com.saem.domain.MemberVO">
+		SELECT * FROM the_sight_member WHERE m_used = 0 ORDER BY m_userid DESC limit #{pageNum}, 7;
+	</select>
+	
+	<select id="select_User" resultType="com.saem.domain.MemberVO">
+		SELECT count(*) as m_count FROM the_sight_member WHERE m_userid = #{m_userid} OR m_email = #{m_email} AND m_confirm = #{m_confirm}
+	</select>
+	
+	<select id="select_UserInfo" resultType="com.saem.domain.MemberVO">
+		SELECT * FROM the_sight_member WHERE m_confirm = #{m_confirm} and m_userid = #{m_userid}
+	</select>
+
+	<select id="select_UserId" resultType="com.saem.domain.MemberVO">
+		SELECT m_userid FROM the_sight_member WHERE m_confirm = #{m_confirm} AND m_name = #{m_name} AND m_email = #{m_email}
+	</select>
+	
+	<select id="find_UserPass" resultType="com.saem.domain.MemberVO">
+		SELECT m_userid FROM the_sight_member WHERE m_name = #{m_name} AND m_email = #{m_email} AND m_userid = #{m_userid}
+	</select>
+	
+	<select id="user_login" resultType="com.saem.domain.MemberVO">
+		SELECT *, IFNULL(m_userid, '---') as m_userid FROM the_sight_member WHERE m_userid = #{m_userid} AND m_password = #{m_password}
+	</select>
+	
+	<update id="delete_user">
+		UPDATE the_sight_member SET m_used = 0 WHERE m_userid = #{m_userid}
+	</update>
+	
+	<update id="update_info">
+		UPDATE the_sight_member SET m_email = #{m_email}, m_gender = #{m_gender}  WHERE m_userid = #{m_userid} AND m_confirm = #{m_confirm}
+	</update>
+	
+	<update id="update_password">
+		UPDATE the_sight_member SET m_password = #{m_password}  WHERE m_userid = #{m_userid} AND m_confirm = #{m_confirm}
+	</update>
+	
+	<update id="update_withdrawal">
+		UPDATE the_sight_member SET m_used = 0 WHERE m_userid = #{m_userid} AND m_confirm = #{m_confirm} AND m_password = #{m_password}
+	</update>
+	
+	<update id="delete">
+		UPDATE the_sight_member SET m_used = 0 WHERE m_userid = #{m_userid}
+	</update>
+	
+	<update id="save">
+		UPDATE the_sight_member SET m_used = 1 WHERE m_userid = #{m_userid}
+	</update>
+	
+	<insert id="naver_join">
+      	INSERT INTO the_sight_member(m_userid, m_email, m_name, m_gender, m_birth, m_emailcheck, m_confirm) VALUES(#{m_userid}, #{m_email}, #{m_name}, #{m_gender}, #{m_birth}, true, #{m_confirm})
+   	</insert>
+   	
+   	<select id="default_join">
+   		INSERT INTO the_sight_member(m_userid, m_password, m_name, m_birth, m_gender, m_email, m_emailcheck, m_salt) VALUES(#{m_userid}, #{m_password}, #{m_name}, #{m_birth}, #{m_gender}, #{m_email},#{m_emailcheck}, #{m_salt})
+   	</select>
+</mapper>

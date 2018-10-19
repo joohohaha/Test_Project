@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.psboard">
+
+	<select id="select_list" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_used = 1 ORDER BY b_num DESC limit #{pageNum}, 7
+	</select>
+	
+	<select id="select_delete" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_used = 0 ORDER BY b_num DESC limit #{pageNum}, 7
+	</select>
+	
+	<select id="select_notice" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_used = 2 ORDER BY b_num DESC limit 3
+	</select>
+	
+	<select id="select_search" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_used = 1 AND ${search_op} like'${search_cont}' ORDER BY b_num DESC limit #{pageNum}, 7
+	</select>
+	
+	<select id="select" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_num = #{b_num} AND b_used != 0
+	</select>
+	
+	<select id="select_count" resultType="com.saem.domain.PSBoardVO">
+		SELECT count(*) as b_count FROM the_sight_board WHERE b_used = 1
+	</select>
+	
+	<select id="select_hotpost" resultType="com.saem.domain.PSBoardVO">
+		SELECT * FROM the_sight_board WHERE b_used = 1 ORDER BY b_readcount DESC limit 5
+	</select>
+	
+	<update id="delete">
+		UPDATE the_sight_board SET b_used = 0 WHERE b_num = #{b_num}
+	</update>
+	
+	<update id="save">
+		UPDATE the_sight_board SET b_used = 1 WHERE b_num = #{b_num}
+	</update>
+	
+	<update id="update">
+		UPDATE the_sight_board SET b_title = #{b_title}, b_content = #{b_content}, b_updatedate = now() WHERE b_num = #{b_num} AND b_used = 1
+	</update>
+	
+	<update id="uphit">
+		UPDATE the_sight_board SET b_readcount = b_readcount + 1 WHERE b_num = #{b_num} AND b_used = 1
+	</update>
+	
+	<update id="reply_count">
+		UPDATE the_sight_board SET b_replycount = #{b_replycount} WHERE b_num = #{b_num} AND b_used = 1
+	</update>
+	
+	<insert id="insert">
+      	INSERT INTO the_sight_board(b_title, b_content, m_userid, b_used) VALUES(#{b_title}, #{b_content}, #{m_userid}, #{b_used});
+   	</insert>
+	
+</mapper>

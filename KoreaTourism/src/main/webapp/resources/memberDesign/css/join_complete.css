@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,a,address,em,img,strong,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,video{margin:0;padding:0;font-size:100%;border:0;vertical-align:baseline}
+address,em{font-style:normal}
+table{border-collapse:collapse}
+select,
+input{font-family:"맑은 고딕","Malgun Gothic",'돋움',dotum,"Apple SD Gothic Neo",sans-serif;padding:0;margin:0}
+input::-ms-clear{display:none}
+.blind{visibility:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;overflow:hidden}
+ol,ul{list-style:none}
+a,a:link{text-decoration:none}
+body{line-height:1.5;font-family:"맑은 고딕","Malgun Gothic",'돋움',dotum,"Apple SD Gothic Neo",sans-serif;color:#000;font-size:12px;background:#f1f1f1}
+
+/* skip navigation */
+.skip_navi{position:absolute;top:0;left:0;width:0;height:0}
+.skip_navi a{position:absolute;top:-999px;left:0;white-space:nowrap}
+.skip_navi a:focus{top:0;font-size:11px;color:#fff;background:#000;padding:5px}
+
+/*** 회원가입 ***/
+#wrap{position:relative;min-width:320px;max-width:700px;background:#fff;margin:50px auto 0;box-shadow:0 3px 10px rgba(0,0,0,0.3)}
+@media (max-width:700px) {
+    #wrap{margin-top:0}
+}
+
+/** 헤더 **/
+#header{position:relative;height:56px;overflow:hidden;background:#1b52ed;background:linear-gradient(to right,#3faeeb,#3967d0 46%,#3846d0);background:-webkit-linear-gradient(left,#3faeeb,#3967d0 46%,#3846d0);padding-top:24px}
+#header .logo{display:block;width:85px;margin:0 auto}
+#header .logo img{width:100%;vertical-align:top;image-rendering:-webkit-optimize-contrast}
+
+/** 컨텐츠 **/
+#container{position:relative;overflow:hidden;padding:0 45px}
+#container .step_header{position:relative;background:#fff}
+#container .step_header h2{color:#000;font-size:18px;line-height:27px;letter-spacing:-1px;border-bottom:1px solid #f1f1f1;padding:30px 30px 15px}
+#container .step_header .icon_step{position:absolute;top:43px;right:30px;font-size:0;white-space:nowrap}
+#container .step_header .icon_step span{display:inline-block;width:4px;height:4px;border:1px solid #e0e0e0;border-radius:4px;background:#e0e0e0;margin-left:6px;vertical-align:top}
+#container .step_header .icon_step span.on{border-color:#1b52ed;background:#1b52ed}
+#container .text_alert{padding:8px 0}
+#container .text_alert p{position:relative;color:#b92d00;font-size:12px;line-height:18px;letter-spacing:-1px;word-break:break-all;padding-left:15px}
+#container .text_alert p:before{position:absolute;top:5px;left:5px;width:5px;height:5px;border:solid #b92d00;border-width:0 0 1px 1px;content:''}
+#container .text_alert p span{letter-spacing:0}
+#container .btn_bottom{clear:both;text-align:center;background:#fff;padding-bottom:40px}
+#container .btn_bottom button{width:180px;height:45px;overflow:hidden;color:#fff;font-size:20px;line-height:43px;letter-spacing:-0.5px;border:1px solid #1b52ed;border-radius:24px;background:#1b52ed;padding:0;vertical-align:top;cursor:pointer}
+@media (max-width:700px) {
+    #container{padding:0}
+    #container .step_header{padding:0 25px}
+    #container .step_header h2{padding:20px 0 15px}
+    #container .step_header .icon_step{top:33px;right:25px}
+    #container .btn_bottom{padding-bottom:50px}
+    #container .btn_bottom button{width:150px;height:40px;font-size:18px;line-height:38px;border-radius:20px}
+}
+/* 회원가입 1 : 약관 동의 */
+.join_step_1{padding-top:34px}
+.join_step_1 .box_check_policy{clear:both;position:relative;overflow:hidden}
+.join_step_1 .box_check_policy .sub_text{color:#000;font-size:14px;line-height:20px;letter-spacing:-0.5px;word-break:break-all;margin:0 30px;padding-bottom:6px}
+.join_step_1 .box_check_policy .policy_check{position:relative;height:50px;line-height:50px;padding:0 30px}
+.join_step_1 .box_check_policy .policy_check input{position:absolute;top:13px;left:30px;width:24px;height:24px;opacity:0;filter:alpha(opacity=0);z-index:-1}
+.join_step_1 .box_check_policy .policy_check label{display:block;color:#000;font-size:16px;font-weight:bold;letter-spacing:-0.5px;background:#fff;padding-left:32px;cursor:pointer}
+.join_step_1 .box_check_policy .policy_check label > *{font-size:16px;font-weight:normal}
+.join_step_1 .box_check_policy .policy_check label strong{color:#1b52ed}
+.join_step_1 .box_check_policy .policy_check label small{color:#888}
+.join_step_1 .box_check_policy .policy_check label .icon{position:absolute;top:13px;left:30px;width:24px;height:24px;overflow:hidden;background:url("../images/spr_join_n.png") no-repeat 0 0}
+.join_step_1 .box_check_policy .policy_check label.checked .icon{background-position:-29px 0}
+.join_step_1 .box_check_policy .policy_check.check_total{border-bottom:1px solid #f1f1f1}
+.join_step_1 .box_check_policy .policy_check.check_total label{color:#1b52ed}
+.join_step_1 .box_check_policy .policy_text{position:relative;clear:both;max-height:100px;overflow:hidden;overflow-y:auto;background:#f8f8f8}
+.join_step_1 .box_check_policy .policy_text .text_inner{color:#000;font-size:14px;line-height:20px;letter-spacing:-0.5px;word-break:break-all;padding:20px 25px}
+.join_step_1 .box_check_policy .text_alert{margin:0 25px}
+.join_step_1 .btn_bottom{padding-top:36px}
+@media (max-width:700px) {
+    .join_step_1{padding-top:24px}
+    .join_step_1 .box_check_policy .sub_text{padding-bottom:3px;margin:0 25px}
+    .join_step_1 .box_check_policy .policy_check{padding:0;margin:0 25px}
+    .join_step_1 .box_check_policy .policy_check input,
+    .join_step_1 .box_check_policy .policy_check label .icon{left:0}
+    .join_step_1 .btn_bottom{padding-top:24px}
+}
+/* 회원가입 2 : 가입 정보 입력 */
+.join_step_2{background:#f8f8f8}
+.join_step_2 .box_info_write{clear:both;position:relative;overflow:hidden;background:#fff;padding:0 30px}
+.join_step_2 .box_info_write .write_input dt{clear:both;position:relative;height:24px;line-height:24px;padding:11px 0 10px}
+.join_step_2 .box_info_write .write_input dt:after{clear:both;display:table;content:''}
+.join_step_2 .box_info_write .write_input dt .title{float:left;color:#000;font-size:16px;letter-spacing:-0.5px}
+.join_step_2 .box_info_write .write_input dt .red_bullet{display:inline-block;width:1px;height:1px;overflow:hidden;text-indent:-999px;border:1px solid #b92d00;border-radius:2px;background:#b92d00;margin-left:3px;vertical-align:8px}
+.join_step_2 .box_info_write .write_input dd{clear:both;position:relative}
+.join_step_2 .box_info_write .write_input dd .text_box{display:block;position:relative;overflow:hidden;border:1px solid #f1f1f1;border-radius:20px;background:#f8f8f8}
+.join_step_2 .box_info_write .write_input dd .text_box:after{clear:both;display:table;content:''}
+.join_step_2 .box_info_write .write_input dd .text_box input.input_text{position:relative;float:left;width:100%;height:38px;overflow:hidden;color:#000;font-size:16px;line-height:20px;letter-spacing:-1px;border:0;border-radius:20px;background:url("../images/spr_join_n.png") no-repeat 0 200%;padding:8px 17px 10px;box-sizing:border-box;outline:0;z-index:1;-webkit-appearance:none}
+.join_step_2 .box_info_write .write_input dd .text_box .help_text{position:absolute;top:8px;left:17px;color:#c8c8c8;font-size:16px;line-height:20px;letter-spacing:-1px;white-space:nowrap}
+.join_step_2 .box_info_write .write_input dd .text_box.on{border-color:#e0e0e0;background:#fff}
+.join_step_2 .box_info_write .write_input dd .text_box.on .help_text{display:none}
+.join_step_2 .box_info_write .write_input dd .select_birthdate{font-size:0;white-space:nowrap}
+.join_step_2 .box_info_write .write_input dd .select_birthdate > span{position:relative;display:inline-block;height:38px;overflow:hidden;font-size:16px;border:1px solid #f1f1f1;border-radius:20px;background:#f8f8f8;vertical-align:top;box-sizing:border-box}
+.join_step_2 .box_info_write .write_input dd .select_birthdate > span:after{position:absolute;top:7px;right:13px;width:24px;height:24px;background:url("../images/spr_join_n.png") no-repeat -29px -58px;content:''}
+.join_step_2 .box_info_write .write_input dd .select_birthdate select{position:relative;width:100%;height:38px;color:#c8c8c8;font-size:16px;border:0;border-radius:20px;background:url("../images/spr_join_n.png") no-repeat 0 200%;outline:0;padding:8px 13px 10px 17px;vertical-align:top;z-index:1;-moz-appearance:none;-webkit-appearance:none;box-sizing:border-box}
+.join_step_2 .box_info_write .write_input dd .select_birthdate select::-ms-expand{display:none}
+.join_step_2 .box_info_write .write_input dd .select_birthdate .select_year{width:40.6%}
+.join_step_2 .box_info_write .write_input dd .select_birthdate .select_month{width:27.4%;margin:0 2.3%}
+.join_step_2 .box_info_write .write_input dd .select_birthdate .select_day{width:27.4%}
+.join_step_2 .box_info_write .write_input dd .select_birthdate > span.on{border-color:#e0e0e0;background:#fff}
+.join_step_2 .box_info_write .write_input dd .select_birthdate > span.on select{color:#000}
+.join_step_2 .box_info_write .write_input dd .check_gender{padding-bottom:10px}
+.join_step_2 .box_info_write .write_input dd .check_gender:after{clear:both;display:table;content:''}
+.join_step_2 .box_info_write .write_input dd .check_gender > span{position:relative;float:left;margin-right:18px}
+.join_step_2 .box_info_write .write_input dd .check_gender > span:last-child{margin:0 !important}
+.join_step_2 .box_info_write .write_input dd .check_gender input{position:absolute;top:2px;left:2px;width:20px;height:20px;opacity:0;filter:alpha(opacity=0);z-index:-1}
+.join_step_2 .box_info_write .write_input dd .check_gender label{float:left;height:24px;color:#000;font-size:16px;line-height:24px;letter-spacing:-1px;background:#fff;padding-left:29px}
+.join_step_2 .box_info_write .write_input dd .check_gender label .icon{position:absolute;top:2px;left:2px;width:16px;height:16px;border:2px solid #c2c2c2;border-radius:10px;background:#fff}
+.join_step_2 .box_info_write .write_input dd .check_gender label .icon b{display:none;position:absolute;top:3px;left:3px;width:6px;height:6px;border:2px solid #1b52ed;border-radius:6px;background:#1b52ed;content:''}
+.join_step_2 .box_info_write .write_input dd .check_gender .selected label .icon{border-color:#1b52ed}
+.join_step_2 .box_info_write .write_input dd .check_gender .selected label .icon b{display:block}
+.join_step_2 .box_info_write .write_input .icon_noti{position:absolute;top:7px;right:17px}
+.join_step_2 .box_info_write .write_input .icon_noti > span{display:block;width:24px;height:24px;overflow:hidden;background:url("../images/spr_join_n.png") no-repeat}
+.join_step_2 .box_info_write .write_input .icon_noti .icon_confirmed{background-position:0 -29px}
+.join_step_2 .box_info_write .write_input .icon_noti .icon_alert{background-position:-29px -29px}
+.join_step_2 .box_info_write .write_input .text_alert{padding:4px 0 !important}
+.join_step_2 .box_info_write .write_input .warning{border-color:#b92d00 !important}
+.join_step_2 .box_user_certification{clear:both;position:relative;overflow:hidden;background:#fff;padding-top:20px}
+.join_step_2 .box_user_certification .cert_option li{border-bottom:1px solid #f1f1f1}
+.join_step_2 .box_user_certification .cert_option li.selected{border-bottom-width:0}
+.join_step_2 .box_user_certification .cert_option li:first-child{border-bottom-width:1px}
+.join_step_2 .box_user_certification .cert_option .option_radio{position:relative;height:50px;overflow:hidden;line-height:50px;margin:0 30px}
+.join_step_2 .box_user_certification .cert_option .option_radio input{position:absolute;top:15px;left:2px;width:20px;height:20px;opacity:0;filter:alpha(opacity=0);z-index:-1}
+.join_step_2 .box_user_certification .cert_option .option_radio label{display:block;height:50px;color:#000;font-size:16px;font-weight:bold;letter-spacing:-1px;background:#fff;padding-left:29px;cursor:pointer}
+.join_step_2 .box_user_certification .cert_option .option_radio label strong{color:#1b52ed}
+.join_step_2 .box_user_certification .cert_option .option_radio label .icon{position:absolute;top:15px;left:2px;width:16px;height:16px;border:2px solid #c2c2c2;border-radius:10px;background:#fff;content:''}
+.join_step_2 .box_user_certification .cert_option .option_radio label .icon b{display:none;position:absolute;top:3px;left:3px;width:6px;height:6px;border:2px solid #1b52ed;border-radius:6px;background:#1b52ed;content:''}
+.join_step_2 .box_user_certification .cert_option .option_cont{display:none;clear:both;border-top:1px solid #f1f1f1;padding:18px 30px}
+.join_step_2 .box_user_certification .cert_option .option_cont > div{clear:both;position:relative;padding-right:44px}
+.join_step_2 .box_user_certification .cert_option .option_cont > div .text_box{display:block;position:relative;height:38px;overflow:hidden;border:1px solid #f1f1f1;border-radius:20px;background:#f8f8f8}
+.join_step_2 .box_user_certification .cert_option .option_cont > div .text_box label{position:absolute;top:8px;left:17px;color:#c8c8c8;font-size:16px;line-height:20px;letter-spacing:-1px;cursor:text}
+.join_step_2 .box_user_certification .cert_option .option_cont > div .text_box input{position:relative;float:left;width:100%;height:38px;overflow:hidden;color:#000;font-size:16px;line-height:20px;letter-spacing:-1px;border:0;border-radius:20px;background:url("../images/spr_join_n.png") no-repeat 0 200%;padding:8px 17px 10px;box-sizing:border-box;outline:0;z-index:1;-webkit-appearance:none}
+.join_step_2 .box_user_certification .cert_option .option_cont > div > button{position:absolute;top:0;right:0;width:40px;height:40px;overflow:hidden;color:#000;font-size:14px;line-height:38px;letter-spacing:-0.5px;white-space:nowrap;text-align:center;border:1px solid #e0e0e0;border-radius:20px;background:#fff;padding:0;cursor:pointer}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box{padding-left:91px}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box:before{position:absolute;top:7px;left:62px;width:24px;height:24px;background:url("../images/spr_join_n.png") no-repeat -29px -58px;content:''}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box:after{position:absolute;top:10px;left:90px;width:1px;height:18px;background:#ebebeb;content:''}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box select{position:absolute;top:0;left:0;width:90px;height:38px;color:#c8c8c8;font-size:16px;border:0;background:url("../images/spr_join_n.png") no-repeat 0 200%;padding:8px 10px 10px 16px;z-index:1;outline:0;-moz-appearance:none;-webkit-appearance:none;box-sizing:border-box}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box select::-ms-expand{display:none}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box label{left:101px}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box input{padding-left:11px}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_email .text_box .btn_clear{display:none;position:absolute;top:7px;right:13px;width:24px;height:24px;overflow:hidden;text-indent:-999px;border:0;background:url("../images/spr_join_n.png") no-repeat 0 -58px;z-index:2;cursor:pointer}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_email .text_complete{background:#fffae0 !important}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_email .text_complete label{display:none}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_email .text_complete .btn_clear{display:block}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_cert{margin-top:14px}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_cert .text_box{padding-left:91px}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_cert .text_box:after{position:absolute;top:10px;left:90px;width:1px;height:18px;background:#ebebeb;content:''}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_cert .text_box label{position:absolute;top:8px;left:17px;color:#000;font-size:16px;line-height:20px;letter-spacing:-1px}
+.join_step_2 .box_user_certification .cert_option .option_cont .text_alert{margin-bottom:-8px}
+.join_step_2 .box_user_certification .cert_option .selected .option_radio label .icon{border-color:#1b52ed}
+.join_step_2 .box_user_certification .cert_option .selected .option_radio label .icon b{display:block}
+.join_step_2 .box_user_certification .cert_option .selected .option_cont{display:block}
+.join_step_2 .box_user_certification .cert_option .disable .option_radio label,
+.join_step_2 .box_user_certification .cert_option .disable .option_radio label strong{color:#c8c8c8}
+.join_step_2 .box_user_certification .cert_option .option_cont > div.on .text_box{border-color:#e0e0e0;background:#fff}
+.join_step_2 .box_user_certification .cert_option .option_cont > div.on > button{color:#fff;border-color:#1740b4;background:#1b52ed}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone.on .text_box select{color:#000}
+.join_step_2 .box_user_certification .cert_option .option_cont .input_phone.on .text_box label,
+.join_step_2 .box_user_certification .cert_option .option_cont .input_email.on .text_box label{display:none}
+.join_step_2 .btn_bottom{padding-top:35px}
+@media (max-width:700px) {
+    .join_step_2 .box_info_write{padding:8px 25px 0;margin-top:8px}
+    .join_step_2 .step_header + .box_info_write{padding-top:2px;margin:0}
+    .join_step_2 .box_info_write .write_input{padding-bottom:25px}
+    .join_step_2 .box_info_write .write_input dt{padding:9px 0 8px}
+    .join_step_2 .box_user_certification{clear:both;position:relative;overflow:hidden;background:#fff;padding:8px 25px 0;margin-top:8px}
+    .join_step_2 .box_user_certification .cert_option .option_radio{margin:0}
+    .join_step_2 .box_user_certification .cert_option .option_cont{padding:18px 0}
+    .join_step_2 .btn_bottom{padding-top:25px}
+}
+/* 회원가입 3 : 가입 완료 */
+.join_step_3{padding-bottom:111px}
+.join_step_3 .box_join_complete .join_user{position:relative;height:302px;overflow:hidden;padding-top:79px}
+.join_step_3 .box_join_complete .user_box{position:absolute;bottom:0;left:50%;width:300px;height:300px;overflow:hidden;color:#fff;font-size:25px;font-weight:bold;line-height:37px;letter-spacing:-0.5px;text-align:center;border:1px solid #fff;border-radius:152px;background:#1b52ed;background:linear-gradient(to right,#3faeeb,#3967d0 46%,#3846d0);background:-webkit-linear-gradient(left,#3faeeb,#3967d0 46%,#3846d0);margin-left:-152px}
+.join_step_3 .box_join_complete .user_box .line{display:block}
+.join_step_3 .box_join_complete .user_box .line:first-child{padding-top:113px}
+.join_step_3 .box_join_complete .user_box .name{margin-right:3px}
+.join_step_3 .box_join_complete .link_home{text-align:center;margin-top:53px}
+.join_step_3 .box_join_complete .link_home a{color:#000;font-size:16px;line-height:24px;letter-spacing:-0.5px}
+@media (max-width:700px) {
+    .join_step_3{padding-bottom:50px}
+    .join_step_3 .box_join_complete .join_user{height:202px;padding-top:59px}
+    .join_step_3 .box_join_complete .user_box{width:200px;height:200px;line-height:32px;border-radius:102px;margin-left:-102px}
+    .join_step_3 .box_join_complete .user_box .line:first-child{padding-top:67px}
+    .join_step_3 .box_join_complete .link_home{margin-top:56px}
+}
+.join_step_3 .box_join_complete .user_box{animation:completeMoving 1s ease-out forwards}
+@keyframes completeMoving {
+    0% {
+        bottom:80%;opacity:0
+    }
+    100% {
+        bottom:0;opacity:1
+    }
+}
+.join_step_3 .box_join_complete .user_box{-webkit-animation:completeMoving 1s ease-out forwards}
+@-webkit-keyframes completeMoving {
+    0% {
+        bottom:80%;opacity:0
+    }
+    100% {
+        bottom:0;opacity:1
+    }
+}
+/* 모바일 대응 2배 이미지 */
+@media (-webkit-min-device-pixel-ratio:1.5) {
+    .join_step_1 .box_check_policy .policy_check label .icon,
+    .join_step_2 .box_info_write .write_input dd .select_birthdate > span:after,
+    .join_step_2 .box_info_write .write_input .icon_noti > span,
+    .join_step_2 .box_user_certification .cert_option .option_cont .input_phone .text_box:before,
+    .join_step_2 .box_user_certification .cert_option .option_cont .input_email .text_box .btn_clear{background-image:url("../images/spr_join_n_2x.png");background-size:53px 82px}
+}
+
+/** 푸터 **/
+#footer{border-top:1px solid #ededed;padding:15px 0 30px}
+#footer .footer_menu{font-size:0;text-align:center}
+#footer .footer_menu li{position:relative;display:inline-block;height:20px;font-size:14px;line-height:20px;letter-spacing:-0.5px;padding-left:9px;margin-left:8px;vertical-align:top}
+#footer .footer_menu li:before{position:absolute;top:4px;left:0;width:1px;height:12px;background:#dcdcdc;content:''}
+#footer .footer_menu li:first-child{padding:0;margin:0}
+#footer .footer_menu li:first-child:before{display:none}
+#footer .footer_menu li a{color:#999}
+@media (max-width:700px) {
+    #footer{padding:20px 0 25px}
+}
+
+/** 레이어 **/
+#layer{position:fixed;top:0;left:0;bottom:0;width:100%;height:100%;z-index:5000}
+#layer .layer_bg{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3)}
+#layer .layer{position:absolute;top:45%;left:50%;background:#fff;z-index:3000}
+#layer .layer_under_14{margin:-80px 0 0 -150px;width:300px;height:160px;border:1px solid #898f94;border-radius:2px;box-shadow:0 2px 1px rgba(0,0,0,0.07);box-sizing:border-box}
+#layer .layer_under_14 .layer_cont{padding-top:25px}
+#layer .layer_under_14 p.text{color:#000;font-size:16px;font-weight:bold;line-height:24px;letter-spacing:-1px;text-align:center}
+#layer .layer_under_14 p.text strong{color:#1b52ed}
+#layer .layer_under_14 .btn_bottom{font-size:0;text-align:center;padding-top:23px}
+#layer .layer_under_14 .btn_bottom a{display:inline-block;width:88px;height:30px;overflow:hidden;color:#fff;font-size:14px;line-height:30px;letter-spacing:-1px;border:1px solid #1b52ed;border-radius:16px;background:#1b52ed;margin:0 5px;vertical-align:top}
+#layer .layer_under_14 .btn_bottom a.btn_cancel{color:#000;border:1px solid #dcdcdc;background:#fff}
+#layer .layer_under_14_cert_complete .layer_cont{padding-top:36px}
+@media (max-width:700px) {
+    #layer .layer{top:50%}
+}

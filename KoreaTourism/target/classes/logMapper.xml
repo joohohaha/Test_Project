@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.saem.domain.log">
+
+	<select id="selectList" resultType="com.saem.domain.LogVO">
+		SELECT * FROM the_member_log WHERE m_userid = #{m_userid} ORDER BY log_num DESC LIMIT #{pageNum}, 10
+	</select>
+	
+	<insert id="insertLog">
+		INSERT INTO the_member_log(m_userid, log_ip, log_state) VALUES(#{m_userid}, #{log_ip}, #{log_state})
+	</insert>
+	
+	<select id="selectNext" resultType="com.saem.domain.LogVO">
+		SELECT count(*) as log_num FROM the_member_log WHERE m_userid = #{m_userid} ORDER BY log_num DESC LIMIT #{pageNum}, 10
+	</select>
+	
+</mapper>
